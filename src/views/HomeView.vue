@@ -2,18 +2,18 @@
   <div class="home">
 
     <v-snackbar v-model="snackbar" :timeout="4000" top>
-      <span>Awesome! you add a to do thing</span>
-      <template v-slot:action="{ attrs }">
-        <v-btn
-                color="red"
-                text
-                v-bind="attrs"
-                @click="snackbar = false"
-        >
-          Close
-        </v-btn>
-      </template>
-    </v-snackbar>
+    <span>Awesome! you add a to do thing</span>
+    <template v-slot:action="{ attrs }">
+      <v-btn
+              color="red"
+              text
+              v-bind="attrs"
+              @click="snackbar = false"
+      >
+        Close
+      </v-btn>
+    </template>
+  </v-snackbar>
 
     <h1 class="subtitle-1 grey--text pa-8">Dashboard homepage</h1>
     <v-container>
@@ -33,7 +33,7 @@
         <v-col md3>
           <v-tooltip top>
             <template v-slot:activator="{ on, attrs }">
-              <Popup @projectAdded = "snackbar = true"/>
+              <Popup @projectAdded = "snackbar = true" />
             </template>
             <span>Add New Project</span>
           </v-tooltip>
@@ -41,26 +41,26 @@
 
       </v-row>
 
-      <v-card flat height="5rem"  v-for="project in projects" :key="project.title">
+      <v-card flat height="5rem"  v-for="project in projects" :key="project.title" @click="showPopup(project)">
         <v-row wrap :class="`pa-3 project ${project.status} `">
-          <v-col xs12 md6>
+          <v-col col="12" sm="4">
             <div class="caption grey--text">Project Title</div>
             <div>{{project.title}}</div>
           </v-col>
-          <v-col xs6 sm4 md2>
+          <v-col col="12" sm="2">
             <div class="caption grey--text">Person</div>
             <div>{{project.person}}</div>
           </v-col>
-          <v-col xs6 sm4 md2>
+          <v-col col="12" sm="2">
             <div class="caption grey--text">Due by</div>
             <div>{{project.due}}</div>
           </v-col>
-          <v-col xs2 sm4 md2>
+          <v-col col="12" sm="2">
             <div class="float-right">
               <v-chip id="chip-container" small :class="`${project.status} white--text my-2 caption` " >{{project.status}}</v-chip>
             </div>
           </v-col>
-          <v-col xs2 sm4 md2>
+          <v-col col="12" sm="2">
             <v-btn depressed prepend-icon="mdi-delete-circle" rounded="lg" class="#424242 red--text" @click="deleteProject(project)">
               Delete
             </v-btn>
@@ -89,7 +89,8 @@
           // {title:'Design video thumbnails', person:'Ryu', due:'1st jan 2022', status:'complete'},
           // {title:'Create a community forum', person:'Gouken', due:'1st jan 2022', status:'overdue'}
         ],
-        snackbar:false
+        snackbar:false,
+        // selectedProject:null
       }
     },
     methods:{
@@ -100,6 +101,19 @@
             // console.log(project.id);
             await deleteDoc(doc(db.db, "projects", project.id));
             location.reload();
+        },
+        showPopup(project) {
+            // console.log(project)
+            // this.selectedProject = project;
+            // this.$emit("updateProject",this.selectedProject)
+          this.$router.push({
+            name: 'update',
+            query: {
+              data: JSON.stringify(project)
+            }
+          })
+
+
         }
     },
 

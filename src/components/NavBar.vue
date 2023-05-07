@@ -41,6 +41,9 @@
                 links:[
                     {icon:'mdi-view-dashboard',text:'To-do List',route:'/'},
                     {icon:'mdi-text-box',text:'Detailed List',route:'/about'},
+                    // {icon:'mdi-file-chart-check-outline',text:'Update page',route:'/update'},
+                    {icon:'mdi-briefcase-upload',text:'Upload Page',route:'/upload'},
+                    {icon:'mdi-briefcase-download-outline',text:'Download Page',route:'/download'}
                 ],
 
             }

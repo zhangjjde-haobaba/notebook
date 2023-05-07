@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import Upload from '../views/Upload.vue'
+import Update from '../views/Update'
+import Download from '../views/Download'
 
 Vue.use(VueRouter)
 
@@ -19,7 +22,24 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
     }
-  }
+  },
+    {
+        path: '/upload',
+        name: 'upload',
+        component: Upload
+    },
+    {
+        path: '/update',
+        name: 'update',
+        component: Update
+    },
+    {
+        path: '/download',
+        name: 'Download',
+        component: Download
+    },
+
+
 ]
 
 const router = new VueRouter({
