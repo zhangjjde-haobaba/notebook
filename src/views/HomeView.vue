@@ -61,7 +61,7 @@
             </div>
           </v-col>
           <v-col col="12" sm="2">
-            <v-btn depressed prepend-icon="mdi-delete-circle" rounded="lg" class="#424242 red--text" @click="deleteProject(project)">
+            <v-btn depressed prepend-icon="mdi-delete-circle" rounded="lg" class="#424242 red--text" @click.stop="deleteProject(project)">
               Delete
             </v-btn>
           </v-col>
