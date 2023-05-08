@@ -1,5 +1,11 @@
 # notebook
 
+This project use vuetify to realize the front-end function 
+use Firebase(GCP) to do the CRUD function and use Firestorage to realize upload and download function
+
+This project is deployed by netlify the website is:
+https://notebook-vuetify.netlify.app/#/
+
 ## Project setup
 ```
 npm install
