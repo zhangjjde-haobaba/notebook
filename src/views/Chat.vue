@@ -34,7 +34,7 @@
             async sendMessage() {
                 // 将用户的消息添加到消息列表中
                 this.messages.push({ role: 'user', content: this.newMessage });
-                const api = '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'
+                const api = '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'
                 try {
                     // 向API发送请求
                     const response = await axios.post('https://api.openai.com/v1/chat/completions', {
