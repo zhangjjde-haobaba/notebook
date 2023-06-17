@@ -4,6 +4,8 @@ import HomeView from '../views/HomeView.vue'
 import Upload from '../views/Upload.vue'
 import Update from '../views/Update'
 import Download from '../views/Download'
+import Markdown from '../views/MarkDown'
+import Chat from '../views/Chat'
 
 Vue.use(VueRouter)
 
@@ -38,6 +40,17 @@ const routes = [
         name: 'Download',
         component: Download
     },
+    {
+        path: '/markdown',
+        name: 'markdown',
+        component: Markdown
+    },
+    {
+        path: '/chat',
+        name: 'chat',
+        component: Chat
+    },
+
 
 
 ]

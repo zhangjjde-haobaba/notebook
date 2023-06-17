@@ -9,11 +9,15 @@
 
 <script>
 import NavBar from '@/components/NavBar'
+import VuetifyPlugin from '@/plugins/vuetify.js';
+
 export default {
   name: 'App',
   components:{
     NavBar
   },
+
+  vuetify: VuetifyPlugin,
 
   data: () => ({
     //

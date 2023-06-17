@@ -2,22 +2,7 @@
     <div class="download">
         <h1 class="subtitle-1 grey--text pa-8">Download page</h1>
         <v-divider></v-divider>
-<!--        <table>-->
-<!--            <thead>-->
-<!--            <tr>-->
-<!--                <th>File Name</th>-->
-<!--                <th>File Type</th>-->
-<!--                <th>Download Link</th>-->
-<!--            </tr>-->
-<!--            </thead>-->
-<!--            <tbody>-->
-<!--            <tr v-for="(file, index) in files" :key="index">-->
-<!--                <td>{{ file.name }}</td>-->
-<!--                <td>{{ file.type }}</td>-->
-<!--                <td><a :href="file.url" download>{{ file.name }}</a></td>-->
-<!--            </tr>-->
-<!--            </tbody>-->
-<!--        </table>-->
+
         <v-container>
             <v-row>
                 <v-row>
@@ -34,13 +19,13 @@
             </v-row>
             <v-row v-for="(file, index) in files" :key="index">
                 <v-col col="12" sm="4">
-                    <div class="headline-3 black--text">{{file.name}}</div>
+                    <div class="headline-3">{{file.name}}</div>
                 </v-col>
                 <v-col col="12" sm="4">
-                    <div class="headline-3 black--text">{{file.type}}</div>
+                    <div class="headline-3">{{file.type}}</div>
                 </v-col>
                 <v-col col="12" sm="4">
-                    <div class="headline-3 black--text"><a :href="file.url" download>{{ file.name }}</a></div>
+                    <div class="headline-3"><a :href="file.url" download>{{ file.name }}</a></div>
                 </v-col>
             </v-row>
         </v-container>
