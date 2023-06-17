@@ -52,7 +52,7 @@
 
                     }, {
                         headers: {
-                            'Authorization': `Bearer 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`
+                            'Authorization': `Bearer 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`
                         }
                     });
 
